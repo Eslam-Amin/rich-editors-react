@@ -9,6 +9,7 @@ import {
 } from "slate";
 import { Slate, Editable, withReact, useSlate } from "slate-react";
 import { toast } from "react-toastify";
+import WarningBanner from "./WarningBanner";
 
 // Simple Toolbar component
 const Toolbar: React.FC = () => {
@@ -312,22 +313,7 @@ const SlateEditor: React.FC = () => {
 
   return (
     <>
-      <div
-        style={{
-          textAlign: "center",
-          padding: "8px 16px",
-          backgroundColor: "#fff3cd",
-          color: "#856404",
-          border: "1px solid #ffeaa7",
-          borderRadius: "4px",
-          margin: "8px auto",
-          maxWidth: "600px",
-          fontSize: "14px",
-          fontWeight: "500"
-        }}
-      >
-        ⚠️ Some of the packages need to click on "Save as HTML" to work!
-      </div>
+      <WarningBanner />
       <div className="card">
         <h2>Slate</h2>
 

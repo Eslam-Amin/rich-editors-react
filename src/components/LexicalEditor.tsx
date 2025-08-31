@@ -13,6 +13,7 @@ import { ListNode, ListItemNode } from "@lexical/list";
 import { LinkNode } from "@lexical/link";
 
 import ToolbarPlugin from "./lexical/ToolbarPlugin";
+import WarningBanner from "./WarningBanner";
 
 // Simple error boundary component
 const ErrorBoundary = ({ children }: { children: React.ReactNode }) => {
@@ -33,22 +34,7 @@ export default function LexicalEditor() {
 
   return (
     <>
-      <div
-        style={{
-          textAlign: "center",
-          padding: "8px 16px",
-          backgroundColor: "#fff3cd",
-          color: "#856404",
-          border: "1px solid #ffeaa7",
-          borderRadius: "4px",
-          margin: "8px auto",
-          maxWidth: "600px",
-          fontSize: "14px",
-          fontWeight: "500"
-        }}
-      >
-        ⚠️ Some of the packages need to click on "Save as HTML" to work!
-      </div>
+      <WarningBanner />
       <div className="card">
         <h2>Lexical</h2>
 
