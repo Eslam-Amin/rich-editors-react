@@ -18,7 +18,6 @@ export default function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<Navigate to="/comparison" replace />} />
-          <Route path="/comparison" element={<Navigate to="/comparison" />} />
           <Route path="/quill" element={<QuillEditor />} />
           <Route path="/slate" element={<SlateEditor />} />
           <Route path="/lexical" element={<LexicalEditor />} />
