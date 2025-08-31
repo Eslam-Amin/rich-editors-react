@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { toast } from "react-toastify";
 
 // Override the toolbar icons with your own SVG/Icon
 const icons = Quill.import("ui/icons");
@@ -154,7 +155,7 @@ export default function QuillEditor() {
       <div className="save-row">
         <button
           className="btn"
-          onClick={() => alert("HTML saved! Check preview below.")}
+          onClick={() => toast.success("HTML saved! Check preview below.")}
         >
           Save
         </button>

@@ -8,6 +8,7 @@ import {
   Transforms
 } from "slate";
 import { Slate, Editable, withReact, useSlate } from "slate-react";
+import { toast } from "react-toastify";
 
 // Simple Toolbar component
 const Toolbar: React.FC = () => {
@@ -306,7 +307,7 @@ const SlateEditor: React.FC = () => {
       .join("");
 
     setHtml(generatedHtml);
-    alert("HTML saved! Check preview below.");
+    toast.success("HTML saved! Check preview below.");
   };
 
   return (
