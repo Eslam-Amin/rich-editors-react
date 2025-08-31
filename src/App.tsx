@@ -1,9 +1,8 @@
-
-import { NavLink, Route, Routes, Navigate } from 'react-router-dom'
-import QuillEditor from './components/QuillEditor'
-import SlateEditor from './components/SlateEditor'
-import LexicalEditor from './components/LexicalEditor'
-import ComparisonTable from './components/ComparisonTable'
+import { NavLink, Route, Routes, Navigate } from "react-router-dom";
+import QuillEditor from "./components/QuillEditor";
+import SlateEditor from "./components/SlateEditor";
+import LexicalEditor from "./components/LexicalEditor";
+import ComparisonTable from "./components/ComparisonTable";
 
 export default function App() {
   return (
@@ -18,7 +17,7 @@ export default function App() {
       </header>
       <div className="container">
         <Routes>
-          <Route path="/" element={<Navigate to="/quill" replace />} />
+          <Route path="/" element={<Navigate to="/comparison" replace />} />
           <Route path="/quill" element={<QuillEditor />} />
           <Route path="/slate" element={<SlateEditor />} />
           <Route path="/lexical" element={<LexicalEditor />} />
@@ -26,5 +25,5 @@ export default function App() {
         </Routes>
       </div>
     </>
-  )
+  );
 }
