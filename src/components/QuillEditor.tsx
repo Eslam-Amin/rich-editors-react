@@ -66,105 +66,124 @@ export default function QuillEditor() {
   const [html, setHtml] = useState<string>("");
 
   return (
-    <div className="card">
-      <h2>React‑Quill</h2>
-
-      {/* Documentation Links */}
+    <>
       <div
         style={{
-          marginBottom: "16px",
-          padding: "12px",
-          backgroundColor: "#f8f9fa",
-          borderRadius: "6px",
-          border: "1px solid #e9ecef"
+          textAlign: "center",
+          padding: "8px 16px",
+          backgroundColor: "#fff3cd",
+          color: "#856404",
+          border: "1px solid #ffeaa7",
+          borderRadius: "4px",
+          margin: "8px auto",
+          maxWidth: "600px",
+          fontSize: "14px",
+          fontWeight: "500"
         }}
       >
-        <h4 style={{ margin: "0 0 8px 0", color: "#495057" }}>
-          📚 Documentation & Resources
-        </h4>
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a
-            href="https://www.npmjs.com/package/react-quill"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "6px 12px",
-              backgroundColor: "#007bff",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "4px",
-              fontSize: "14px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px"
-            }}
-          >
-            📦 npm Package
-          </a>
-          <a
-            href="https://quilljs.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "6px 12px",
-              backgroundColor: "#28a745",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "4px",
-              fontSize: "14px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px"
-            }}
-          >
-            🌐 Official Website
-          </a>
-          <a
-            href="https://github.com/zenoamaro/react-quill"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "6px 12px",
-              backgroundColor: "#6f42c1",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "4px",
-              fontSize: "14px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px"
-            }}
-          >
-            📖 GitHub Repository
-          </a>
-        </div>
+        ⚠️ Some of the packages need to click on "Save as HTML" to work!
       </div>
 
-      <div className="editor-shell">
-        <ReactQuill
-          style={{ height: "200px" }}
-          theme="snow"
-          value={html}
-          onChange={setHtml}
-          modules={modules}
-          formats={formats}
-          placeholder="Write something..."
-        />
-      </div>
+      <div className="card">
+        <h2>React‑Quill</h2>
 
-      <div className="save-row">
-        <button
-          className="btn"
-          onClick={() => toast.success("HTML saved! Check preview below.")}
+        {/* Documentation Links */}
+        <div
+          style={{
+            marginBottom: "16px",
+            padding: "12px",
+            backgroundColor: "#f8f9fa",
+            borderRadius: "6px",
+            border: "1px solid #e9ecef"
+          }}
         >
-          Save
-        </button>
-      </div>
+          <h4 style={{ margin: "0 0 8px 0", color: "#495057" }}>
+            📚 Documentation & Resources
+          </h4>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+            <a
+              href="https://www.npmjs.com/package/react-quill"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#007bff",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "4px",
+                fontSize: "14px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px"
+              }}
+            >
+              📦 npm Package
+            </a>
+            <a
+              href="https://quilljs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#28a745",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "4px",
+                fontSize: "14px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px"
+              }}
+            >
+              🌐 Official Website
+            </a>
+            <a
+              href="https://github.com/zenoamaro/react-quill"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#6f42c1",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "4px",
+                fontSize: "14px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px"
+              }}
+            >
+              📖 GitHub Repository
+            </a>
+          </div>
+        </div>
 
-      <h4>HTML Preview</h4>
-      <div className="output" dangerouslySetInnerHTML={{ __html: html }} />
-      <h4>Raw HTML</h4>
-      <pre className="output">{html || "<empty>"}</pre>
-    </div>
+        <div className="editor-shell">
+          <ReactQuill
+            style={{ height: "200px" }}
+            theme="snow"
+            value={html}
+            onChange={setHtml}
+            modules={modules}
+            formats={formats}
+            placeholder="Write something..."
+          />
+        </div>
+
+        <div className="save-row">
+          <button
+            className="btn"
+            onClick={() => toast.success("HTML saved! Check preview below.")}
+          >
+            Save
+          </button>
+        </div>
+
+        <h4>HTML Preview</h4>
+        <div className="output" dangerouslySetInnerHTML={{ __html: html }} />
+        <h4>Raw HTML</h4>
+        <pre className="output">{html || "<empty>"}</pre>
+      </div>
+    </>
   );
 }

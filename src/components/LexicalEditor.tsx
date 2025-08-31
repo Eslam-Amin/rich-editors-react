@@ -32,93 +32,111 @@ export default function LexicalEditor() {
   };
 
   return (
-    <div className="card">
-      <h2>Lexical</h2>
-
-      {/* Documentation Links */}
+    <>
       <div
         style={{
-          marginBottom: "16px",
-          padding: "12px",
-          backgroundColor: "#f8f9fa",
-          borderRadius: "6px",
-          border: "1px solid #e9ecef"
+          textAlign: "center",
+          padding: "8px 16px",
+          backgroundColor: "#fff3cd",
+          color: "#856404",
+          border: "1px solid #ffeaa7",
+          borderRadius: "4px",
+          margin: "8px auto",
+          maxWidth: "600px",
+          fontSize: "14px",
+          fontWeight: "500"
         }}
       >
-        <h4 style={{ margin: "0 0 8px 0", color: "#495057" }}>
-          📚 Documentation & Resources
-        </h4>
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a
-            href="https://www.npmjs.com/package/lexical"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "6px 12px",
-              backgroundColor: "#007bff",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "4px",
-              fontSize: "14px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px"
-            }}
-          >
-            📦 npm Package
-          </a>
-          <a
-            href="https://lexical.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "6px 12px",
-              backgroundColor: "#28a745",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "4px",
-              fontSize: "14px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px"
-            }}
-          >
-            🌐 Official Website
-          </a>
-          <a
-            href="https://github.com/facebook/lexical"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "6px 12px",
-              backgroundColor: "#6f42c1",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "4px",
-              fontSize: "14px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px"
-            }}
-          >
-            📖 GitHub Repository
-          </a>
+        ⚠️ Some of the packages need to click on "Save as HTML" to work!
+      </div>
+      <div className="card">
+        <h2>Lexical</h2>
+
+        {/* Documentation Links */}
+        <div
+          style={{
+            marginBottom: "16px",
+            padding: "12px",
+            backgroundColor: "#f8f9fa",
+            borderRadius: "6px",
+            border: "1px solid #e9ecef"
+          }}
+        >
+          <h4 style={{ margin: "0 0 8px 0", color: "#495057" }}>
+            📚 Documentation & Resources
+          </h4>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+            <a
+              href="https://www.npmjs.com/package/lexical"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#007bff",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "4px",
+                fontSize: "14px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px"
+              }}
+            >
+              📦 npm Package
+            </a>
+            <a
+              href="https://lexical.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#28a745",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "4px",
+                fontSize: "14px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px"
+              }}
+            >
+              🌐 Official Website
+            </a>
+            <a
+              href="https://github.com/facebook/lexical"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#6f42c1",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "4px",
+                fontSize: "14px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px"
+              }}
+            >
+              📖 GitHub Repository
+            </a>
+          </div>
         </div>
+
+        <LexicalComposer initialConfig={initialConfig}>
+          <EditorInner onSaveHtml={setHtml} />
+        </LexicalComposer>
+
+        <div className="save-row">
+          <small>Click "Save as HTML" inside the editor</small>
+        </div>
+
+        <h4>HTML Preview</h4>
+        <div className="output" dangerouslySetInnerHTML={{ __html: html }} />
+        <h4>Raw HTML</h4>
+        <pre className="output">{html || "<empty>"}</pre>
       </div>
-
-      <LexicalComposer initialConfig={initialConfig}>
-        <EditorInner onSaveHtml={setHtml} />
-      </LexicalComposer>
-
-      <div className="save-row">
-        <small>Click "Save as HTML" inside the editor</small>
-      </div>
-
-      <h4>HTML Preview</h4>
-      <div className="output" dangerouslySetInnerHTML={{ __html: html }} />
-      <h4>Raw HTML</h4>
-      <pre className="output">{html || "<empty>"}</pre>
-    </div>
+    </>
   );
 }
 

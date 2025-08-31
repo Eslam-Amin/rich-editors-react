@@ -311,103 +311,121 @@ const SlateEditor: React.FC = () => {
   };
 
   return (
-    <div className="card">
-      <h2>Slate</h2>
-
-      {/* Documentation Links */}
+    <>
       <div
         style={{
-          marginBottom: "16px",
-          padding: "12px",
-          backgroundColor: "#f8f9fa",
-          borderRadius: "6px",
-          border: "1px solid #e9ecef"
+          textAlign: "center",
+          padding: "8px 16px",
+          backgroundColor: "#fff3cd",
+          color: "#856404",
+          border: "1px solid #ffeaa7",
+          borderRadius: "4px",
+          margin: "8px auto",
+          maxWidth: "600px",
+          fontSize: "14px",
+          fontWeight: "500"
         }}
       >
-        <h4 style={{ margin: "0 0 8px 0", color: "#495057" }}>
-          📚 Documentation & Resources
-        </h4>
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a
-            href="https://www.npmjs.com/package/slate"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "6px 12px",
-              backgroundColor: "#007bff",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "4px",
-              fontSize: "14px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px"
-            }}
-          >
-            📦 npm Package
-          </a>
-          <a
-            href="https://docs.slatejs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "6px 12px",
-              backgroundColor: "#28a745",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "4px",
-              fontSize: "14px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px"
-            }}
-          >
-            🌐 Official Website
-          </a>
-          <a
-            href="https://github.com/ianstormtaylor/slate"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "6px 12px",
-              backgroundColor: "#6f42c1",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "4px",
-              fontSize: "14px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px"
-            }}
-          >
-            📖 GitHub Repository
-          </a>
-        </div>
+        ⚠️ Some of the packages need to click on "Save as HTML" to work!
       </div>
+      <div className="card">
+        <h2>Slate</h2>
 
-      <Slate editor={editor} initialValue={value} onChange={setValue}>
-        <Toolbar />
-        <Editable
-          placeholder="Write something..."
+        {/* Documentation Links */}
+        <div
           style={{
-            minHeight: "200px",
+            marginBottom: "16px",
             padding: "12px",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
-            backgroundColor: "#fff"
+            backgroundColor: "#f8f9fa",
+            borderRadius: "6px",
+            border: "1px solid #e9ecef"
           }}
-        />
-      </Slate>
-      <div className="save-row">
-        <button className="btn" onClick={saveAsHtml}>
-          Save as HTML
-        </button>
+        >
+          <h4 style={{ margin: "0 0 8px 0", color: "#495057" }}>
+            📚 Documentation & Resources
+          </h4>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+            <a
+              href="https://www.npmjs.com/package/slate"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#007bff",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "4px",
+                fontSize: "14px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px"
+              }}
+            >
+              📦 npm Package
+            </a>
+            <a
+              href="https://docs.slatejs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#28a745",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "4px",
+                fontSize: "14px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px"
+              }}
+            >
+              🌐 Official Website
+            </a>
+            <a
+              href="https://github.com/ianstormtaylor/slate"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "6px 12px",
+                backgroundColor: "#6f42c1",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "4px",
+                fontSize: "14px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px"
+              }}
+            >
+              📖 GitHub Repository
+            </a>
+          </div>
+        </div>
+
+        <Slate editor={editor} initialValue={value} onChange={setValue}>
+          <Toolbar />
+          <Editable
+            placeholder="Write something..."
+            style={{
+              minHeight: "200px",
+              padding: "12px",
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+              backgroundColor: "#fff"
+            }}
+          />
+        </Slate>
+        <div className="save-row">
+          <button className="btn" onClick={saveAsHtml}>
+            Save as HTML
+          </button>
+        </div>
+        <h4>HTML Preview</h4>
+        <div className="output" dangerouslySetInnerHTML={{ __html: html }} />
+        <h4>Raw HTML</h4>
+        <pre className="output">{html || "<empty>"}</pre>
       </div>
-      <h4>HTML Preview</h4>
-      <div className="output" dangerouslySetInnerHTML={{ __html: html }} />
-      <h4>Raw HTML</h4>
-      <pre className="output">{html || "<empty>"}</pre>
-    </div>
+    </>
   );
 };
 
