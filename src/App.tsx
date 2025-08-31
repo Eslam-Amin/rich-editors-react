@@ -1,4 +1,6 @@
 import { NavLink, Route, Routes, Navigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import QuillEditor from "./components/QuillEditor";
 import SlateEditor from "./components/SlateEditor";
 import LexicalEditor from "./components/LexicalEditor";
@@ -24,6 +26,18 @@ export default function App() {
           <Route path="/comparison" element={<ComparisonTable />} />
         </Routes>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 }
