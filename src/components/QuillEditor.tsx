@@ -67,6 +67,78 @@ export default function QuillEditor() {
   return (
     <div className="card">
       <h2>React‑Quill</h2>
+
+      {/* Documentation Links */}
+      <div
+        style={{
+          marginBottom: "16px",
+          padding: "12px",
+          backgroundColor: "#f8f9fa",
+          borderRadius: "6px",
+          border: "1px solid #e9ecef"
+        }}
+      >
+        <h4 style={{ margin: "0 0 8px 0", color: "#495057" }}>
+          📚 Documentation & Resources
+        </h4>
+        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+          <a
+            href="https://www.npmjs.com/package/react-quill"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              padding: "6px 12px",
+              backgroundColor: "#007bff",
+              color: "white",
+              textDecoration: "none",
+              borderRadius: "4px",
+              fontSize: "14px",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px"
+            }}
+          >
+            📦 npm Package
+          </a>
+          <a
+            href="https://quilljs.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              padding: "6px 12px",
+              backgroundColor: "#28a745",
+              color: "white",
+              textDecoration: "none",
+              borderRadius: "4px",
+              fontSize: "14px",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px"
+            }}
+          >
+            🌐 Official Website
+          </a>
+          <a
+            href="https://github.com/zenoamaro/react-quill"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              padding: "6px 12px",
+              backgroundColor: "#6f42c1",
+              color: "white",
+              textDecoration: "none",
+              borderRadius: "4px",
+              fontSize: "14px",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px"
+            }}
+          >
+            📖 GitHub Repository
+          </a>
+        </div>
+      </div>
+
       <div className="editor-shell">
         <ReactQuill
           style={{ height: "200px" }}
